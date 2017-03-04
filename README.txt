@@ -1,4 +1,4 @@
-# JunkLang
+﻿JunkLang
 
 1.字面值：
 
