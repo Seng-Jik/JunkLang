@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace JunkLang
@@ -8,12 +9,12 @@ namespace JunkLang
     {
         public struct Token
         {
-            enum Type{
+            public enum Type{
                 Number,
                 Command
             }
-            Type type;
-            string word;
+            public Type type;
+            public string word;
         }
 
         private static bool IsNumber(char c)
@@ -51,10 +52,37 @@ namespace JunkLang
                 c == '>';
         }
 
-        static List<Token> GetTokens(string code)
+        static private void PushNumberToken(Token token,IList<Token> tokens)
         {
-            //TODO：GetToken
-            return new List<Token>();
+            if (token.word != "" && token.word != null) tokens.Add(token);
+            token.word = "";
+        }
+
+        static IList<Token> GetTokens(string code)
+        {
+            
+            var tokens = new List<Token>();
+            var codeReader = new StringReader(code);
+
+            Token numberToken = new Token();
+            numberToken.type = Token.Type.Number;
+
+            while(codeReader.Peek() != -1)
+            {
+                char ch = (char)codeReader.Read();
+
+                if (IsCommand(ch))
+                {
+                    PushNumberToken(numberToken, tokens);
+                }
+                else if (IsNumber(ch))
+                {
+                    numberToken.word += ch;
+                }
+            }
+            PushNumberToken(numberToken , tokens);
+
+            return tokens;
         }
     }
 }
