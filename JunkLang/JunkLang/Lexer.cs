@@ -58,7 +58,7 @@ namespace JunkLang
             token.word = "";
         }
 
-        static IList<Token> GetTokens(string code)
+        static public IList<Token> GetTokens(string code)
         {
             
             var tokens = new List<Token>();
