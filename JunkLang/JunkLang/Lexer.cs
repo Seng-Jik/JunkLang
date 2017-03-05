@@ -52,7 +52,7 @@ namespace JunkLang
                 c == '>';
         }
 
-        static private void PushNumberToken(Token token,IList<Token> tokens)
+        static private void PushNumberToken(ref Token token,IList<Token> tokens)
         {
             if (token.word != "" && token.word != null) tokens.Add(token);
             token.word = "";
@@ -73,14 +73,18 @@ namespace JunkLang
 
                 if (IsCommand(ch))
                 {
-                    PushNumberToken(numberToken, tokens);
+                    PushNumberToken(ref numberToken, tokens);
+                    Token tkn = new Token();
+                    tkn.type = Token.Type.Command;
+                    tkn.word += ch;
+                    tokens.Add(tkn);
                 }
                 else if (IsNumber(ch))
                 {
                     numberToken.word += ch;
                 }
             }
-            PushNumberToken(numberToken , tokens);
+            PushNumberToken(ref numberToken , tokens);
 
             return tokens;
         }

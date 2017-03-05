@@ -1,12 +1,12 @@
-﻿using System;
+﻿using JunkLang;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
+using System;
 using System.Collections.Generic;
-using JunkLang;
+using System.IO;
 namespace JunkLangTest
 {
     [TestClass]
-    class LexerTest
+    public class LexerTest
     {
         public static IList<JunkLang.Lexer.Token> GetLexingResult(string path)
         {
@@ -28,13 +28,13 @@ namespace JunkLangTest
         }
 
         [TestMethod]
-        public void TestHelloWorld()
+        public void TestHelloWorldLexing()
         {
             PrintTokens("HelloWorld.junk");
         }
 
         [TestMethod]
-        public void TestCircle()
+        public void TestCircleLexing()
         {
             PrintTokens("Circle.junk");
         }
