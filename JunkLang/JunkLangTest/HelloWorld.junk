@@ -1,0 +1,36 @@
+,分配内存
+^XI			,十一字节
+
+,初始化指针
+0
+
+,赋值出HelloWorld字符串的ASCII码
+	  ;LII		,H = 72(ASCII)
+	]I			,右移指针
+	  ;CI			,e
+  ]I
+                       ;CVIII	    	,l
+]I
+;CVIII	    	,l
+]I
+;CXI		,o
+]I			
+;LXXXVII	,W
+]I
+;CXI		,o
+]I
+;CXIV		,r
+]I
+;CVIII		,l
+]I
+;C			,d
+]I
+;O			,结尾
+
+,将指针置0，然后向右遍历输出字符串
+0
+?O
+<
+!O
+
+vXI	,释放内存
