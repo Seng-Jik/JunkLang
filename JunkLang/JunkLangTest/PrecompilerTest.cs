@@ -13,8 +13,7 @@ namespace JunkLangTest
             var stream = File.OpenText("..\\..\\" + testCodeFilePath);
             precomp.SetSourceCode(stream.ReadToEnd());
 
-            foreach(var i in precomp.Precompile())
-              Console.WriteLine("BEGIN["+i+"]END");
+             Console.WriteLine(precomp.Precompile());
         }
 
         [TestMethod]

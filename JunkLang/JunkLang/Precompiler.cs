@@ -15,9 +15,9 @@ namespace JunkLang
             m_source = new StringReader(s);
         }
 
-        public ArrayList Precompile()
+        public string Precompile()
         {
-            ArrayList codes = new ArrayList();
+            string codes = "";
 
             while (m_source.Peek() != -1)
             {
@@ -31,7 +31,7 @@ namespace JunkLang
 
                 if (line == null || line == "") continue;
 
-                codes.Add(line);
+                codes += line;
             }
 
             return codes;
