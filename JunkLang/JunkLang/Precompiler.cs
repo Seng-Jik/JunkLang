@@ -6,22 +6,16 @@ using System.Collections;
 
 namespace JunkLang
 {
-    public class Precompiler
+    public static class Precompiler
     {
-        private System.IO.StringReader m_source;
 
-        public void SetSourceCode(string s)
+        public static string Precompile(System.IO.StringReader source)
         {
-            m_source = new StringReader(s);
-        }
+            string codes = "";
 
-        public ArrayList Precompile()
-        {
-            ArrayList codes = new ArrayList();
-
-            while (m_source.Peek() != -1)
+            while (source.Peek() != -1)
             {
-                string line = m_source.ReadLine();
+                string line = source.ReadLine();
                 line += ',';
 
                 var comment = line.IndexOf(',');
@@ -31,7 +25,7 @@ namespace JunkLang
 
                 if (line == null || line == "") continue;
 
-                codes.Add(line);
+                codes += line;
             }
 
             return codes;
