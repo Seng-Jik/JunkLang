@@ -10,7 +10,6 @@ namespace JunkLang
         {
             List<byte> numbers = new List<byte>();
             byte[] times = new byte[255];
-            if (numbers.Count == 0) throw new Exception("Invalid number");
             foreach (var i in rome)
             {
                 if (i == 'O') numbers.Add(0);
@@ -24,6 +23,7 @@ namespace JunkLang
                 else throw new Exception("Invalid number:" + rome);
                 times[i]++;
             }
+            if (numbers.Count == 0) throw new Exception("Invalid number");
             if (times['0'] > 1) throw new Exception("Invalid number");
             if (times['0'] > 0 && (times['I'] > 0 || times['V'] > 0 || times['X'] > 0 || times['L'] > 0 || times['C'] > 0)) throw new Exception("Invalid number");
             if (times['V'] > 1 || times['L'] > 1 || times['I'] > 3 || times['X'] > 3 || times['C'] > 3) throw new Exception("Rule error");
