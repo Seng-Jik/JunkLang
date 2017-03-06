@@ -51,8 +51,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="LexerTest.cs" />
+    <Compile Include="ParserTests.cs" />
     <Compile Include="PrecompilerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RomeNumberTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JunkLang\JunkLang.csproj">

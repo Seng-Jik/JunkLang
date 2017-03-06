@@ -20,6 +20,7 @@ namespace JunkLang
         private static bool IsNumber(char c)
         {
             return
+                c == 'O' ||
                 c == 'I' ||
                 c == 'V' ||
                 c == 'X' ||
@@ -82,6 +83,10 @@ namespace JunkLang
                 else if (IsNumber(ch))
                 {
                     numberToken.word += ch;
+                }
+                else
+                {
+                    throw new Exception("Unknown Char:" + ch);
                 }
             }
             PushNumberToken(ref numberToken , tokens);
