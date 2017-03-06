@@ -25,7 +25,7 @@ namespace JunkLang
                 times[i]++;
             }
             if (times['0'] > 1) throw new Exception("Invalid number");
-            if (times['0'] > 1 && (times['I'] > 0 || times['V'] > 0 || times['X'] > 0 || times['L'] > 0 || times['C'] > 0)) throw new Exception("Invalid number");
+            if (times['0'] > 0 && (times['I'] > 0 || times['V'] > 0 || times['X'] > 0 || times['L'] > 0 || times['C'] > 0)) throw new Exception("Invalid number");
             if (times['V'] > 1 || times['L'] > 1 || times['I'] > 3 || times['X'] > 3 || times['C'] > 3) throw new Exception("Rule error");
             byte before = 0;
             byte number = 0;
