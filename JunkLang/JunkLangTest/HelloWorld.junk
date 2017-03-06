@@ -5,7 +5,7 @@
 0
 
 ,赋值出HelloWorld字符串的ASCII码
-	  ;LII		,H = 72(ASCII)
+	  ;LXXII		,H = 72(ASCII)
 	]I			,右移指针
 	  ;CI			,e
   ]I
@@ -31,6 +31,10 @@
 0
 ?O
 <
-!O
+]I
+!I
+|O
+
+?I
 
 vXI	,释放内存

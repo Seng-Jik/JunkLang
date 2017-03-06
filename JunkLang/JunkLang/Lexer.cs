@@ -50,7 +50,9 @@ namespace JunkLang
                 c == '^' ||
                 c == 'v' ||
                 c == '<' ||
-                c == '>';
+                c == '>' ||
+                c == '(' ||
+                c == ')';
         }
 
         static private void PushNumberToken(ref Token token,IList<Token> tokens)
