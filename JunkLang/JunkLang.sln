@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JunkLang", "JunkLang\JunkLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JunkLangTest", "JunkLangTest\JunkLangTest.csproj", "{24281FD8-09BB-4343-952F-3795BD0E7E92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JunkLangTests", "JunkLangTests\JunkLangTests.csproj", "{E6D2CFBC-9F31-4365-AA9F-70C8B7FECBB0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{24281FD8-09BB-4343-952F-3795BD0E7E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24281FD8-09BB-4343-952F-3795BD0E7E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24281FD8-09BB-4343-952F-3795BD0E7E92}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6D2CFBC-9F31-4365-AA9F-70C8B7FECBB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6D2CFBC-9F31-4365-AA9F-70C8B7FECBB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6D2CFBC-9F31-4365-AA9F-70C8B7FECBB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6D2CFBC-9F31-4365-AA9F-70C8B7FECBB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
