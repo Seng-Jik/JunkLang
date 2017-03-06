@@ -15,7 +15,7 @@ namespace JunkLang
         public static IList<Sentence> Parse(IList<Lexer.Token> tokens)
         {
             const string cmdNeedArg = ";-+/&%*~][!|?^v";
-            const string cmdNeedntArg = "#0<_>";
+            const string cmdNeedntArg = "#0<_>()";
 
             Queue < Lexer.Token > tokenQueue = new Queue<Lexer.Token>(tokens);
 

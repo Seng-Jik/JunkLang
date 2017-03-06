@@ -10,7 +10,7 @@ namespace JunkLang
         private static void GenBegin(StringBuilder sb)
         {
             sb.AppendLine("using System;");
-            sb.AppendLine("using System.Text;");
+            //sb.AppendLine("using System.Text;");
             sb.AppendLine("");
             sb.AppendLine("namespace JunkProgram");
             sb.AppendLine("{");
@@ -22,7 +22,7 @@ namespace JunkLang
             sb.AppendLine("\t\tprivate static int mPtr;");
 
             //Gen Memory Resizer
-            sb.AppendLine("\t\tprivate static ChangeMemory(int sizeChanged)");
+            sb.AppendLine("\t\tprivate static void ChangeMemory(int sizeChanged)");
             sb.AppendLine("\t\t{");
             sb.AppendLine("\t\t\tbyte [] backup = mMemory;");
             sb.AppendLine("\t\t\tif(backup != null){");
@@ -40,6 +40,7 @@ namespace JunkLang
 
         private static void GenEnd(StringBuilder sb)
         {
+            sb.Append("\t\t\tConsole.ReadKey();");
             sb.AppendLine("");
             sb.AppendLine("\t\t}");
             sb.AppendLine("\t}");
@@ -54,7 +55,7 @@ namespace JunkLang
             codeDics['-'] = "mMemory[mPtr] += @;";
             codeDics['+'] = "mMemory[mPtr] -= @;";
             codeDics['/'] = "mMemory[mPtr] *= @;";
-            codeDics['&'] = "mMemory[mPtr] = Math.Pow(mMemory[mPtr],@);";
+            codeDics['&'] = "mMemory[mPtr] = (byte)Math.Pow(mMemory[mPtr],@);";
             codeDics['_'] = "mMemory[mPtr] = Math.Sqrt(mMemory[mPtr]);";
             codeDics['%'] = "mMemory[mPtr] /= @;";
             codeDics['*'] = "mMemory[mPtr] %= @;";
@@ -67,8 +68,10 @@ namespace JunkLang
             codeDics['?'] = "LAB_@:";
             codeDics['^'] = "ChangeMemory(@);";
             codeDics['v'] = "ChangeMemory(-@);";
-            codeDics['<'] = "Console.WriteLine(mMemory[mPtr].ToString());";
+            codeDics['<'] = "Console.Write((char)mMemory[mPtr]);";
             codeDics['>'] = "mMemory[mPtr] = Convert.ToByte(Console.ReadLine());";
+            codeDics['('] = "Console.WriteLine(mMemory[mPtr].ToString());";
+            codeDics[')'] = "mMemory[mPtr] = (byte)Console.ReadKey();";
             return "\t\t\t" + codeDics[sent.command].Replace("@", sent.argument.ToString());
         }
 
