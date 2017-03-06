@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompilePipe.cs" />
     <Compile Include="CSharpCodeGen.cs" />
     <Compile Include="Lexer.cs" />
     <Compile Include="Parser.cs" />
