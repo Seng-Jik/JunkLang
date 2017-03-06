@@ -14,7 +14,8 @@ namespace JunkLang.Tests
         [TestMethod()]
         public void CompileCodesTest()
         {
-            CSharpCompiler.CompileCodes("using System;\r\nnamespace CodeDomSample\r\n{\r\nclass Program\r\n{\r\nstatic void Main(string[] args)\r\n{\r\nConsole.WriteLine(\"Hello World!\");\r\nConsole.ReadLine();\r\n}\r\n}\r\n}", "D:\\C# Code\\CompileTest.exe");
+            CSharpCompiler.CompileCodes("using System;\r\n"
+              +  "namespace CodeDomSample\r\n{\r\nclass Program\r\n{\r\nstatic void Main(string[] args)\r\n{\r\nConsole.WriteLine(\"Hello World!\");\r\nConsole.ReadLine();\r\n}\r\n}\r\n}", "D:\\C# Code\\CompileTest.exe");
             //Assert.Fail();
         }
     }

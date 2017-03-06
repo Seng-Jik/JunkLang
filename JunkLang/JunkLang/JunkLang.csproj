@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="CompilePipe.cs" />
     <Compile Include="CSharpCodeGen.cs" />
+    <Compile Include="CSharpCompiler.cs" />
     <Compile Include="Lexer.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Precompiler.cs" />

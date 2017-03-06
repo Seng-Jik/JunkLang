@@ -39,6 +39,10 @@ namespace JunkLang
         public void Compile()
         {
             var precompiled = Precompiler.Precompile(new StringReader(mCode));
+            var lexed = Lexer.GetTokens(precompiled);
+            var parsed = Parser.Parse(lexed);
+            var cSharp = CSharpCodeGen.GenCode(parsed);
+            CSharpCompiler.CompileCodes(cSharp, mOutput);
         }
     }
 }
