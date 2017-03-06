@@ -11,7 +11,7 @@ namespace JunkLang
             List<byte> numbers = new List<byte>();
 
             numbers.Add(0);
-            foreach(var i in rome)
+            foreach (var i in rome)
             {
                 if (i == 'O') numbers.Add(0);
                 else if (i == 'I') numbers.Add(1);
@@ -26,11 +26,11 @@ namespace JunkLang
 
             byte number = 0;
 
-            for(int i = 1;i < numbers.Count - 1; i++)
+            for (int i = 1; i < numbers.Count - 1; i++)
             {
                 if (numbers[i] >= numbers[i + 1])
                     number += numbers[i];
-                
+
                 else
                     number -= numbers[i];
             }
